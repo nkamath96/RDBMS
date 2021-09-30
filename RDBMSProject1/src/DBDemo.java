@@ -153,6 +153,21 @@ public class DBDemo {
 			return;
 		}
 		
+		// Create a table "Issued Books"
+		try {
+			String createString = "CREATE TABLE " + this.issuedBooks_tableName + " ( "
+					+ "ISSUE_ID INTEGER NOT NULL, " + "USER_ID INTEGER NOT NULL, " 
+					+ "BOOK_ID INTEGER NOT NULL, " + "ISSUE_DATE DATE NOT NULL, "
+					+ "PRIMARY KEY (ISSUE_ID))";
+			this.executeUpdate(conn, createString);
+			System.out.println("Created the table Users");
+		} catch (SQLException e) {
+			System.out.println("ERROR: Could not create the table");
+			e.printStackTrace();
+			return;
+		}		
+		
+		
 		// Create a table "Dummy" for deletion
 			
 		
